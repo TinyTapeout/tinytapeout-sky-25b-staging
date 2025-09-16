@@ -1,0 +1,10 @@
+{
+  "app": "Tiny Tapeout ttsky25a 5c12dd81",
+  "repo": "https://github.com/m-meingast/tt-wokwi-full_adder",
+  "commit": "5a03e2b97b019283217e7f957ef39a30944571fb",
+  "workflow_url": "https://github.com/m-meingast/tt-wokwi-full_adder/actions/runs/17758705094",
+  "sort_id": 1758009519675,
+  "flow_version": "OpenLane2 2.2.9",
+  "pdk_name": "open_pdks",
+  "pdk_version": "open_pdks 0fe599b2afb6708d281543108caf8310912f54af"
+}
