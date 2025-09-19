@@ -1,4 +1,4 @@
-module tt_um_librelane3_test_rename4 (clk,
+module tt_um_librelane3_test_rename6 (clk,
     ena,
     rst_n,
     VPWR,
