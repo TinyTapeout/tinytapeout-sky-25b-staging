@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO tt_um_librelane3_test1
+MACRO tt_um_librelane3_test_rename2
   CLASS BLOCK ;
-  FOREIGN tt_um_librelane3_test1 ;
+  FOREIGN tt_um_librelane3_test_rename2 ;
   ORIGIN 0.000 0.000 ;
   SIZE 161.000 BY 111.520 ;
   PIN VGND
@@ -496,6 +496,6 @@ MACRO tt_um_librelane3_test1
         RECT 136.890 66.815 137.790 109.440 ;
         RECT 140.190 66.815 144.145 109.440 ;
   END
-END tt_um_librelane3_test1
+END tt_um_librelane3_test_rename2
 END LIBRARY
 
