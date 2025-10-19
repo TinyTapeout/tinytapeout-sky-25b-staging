@@ -78,10 +78,19 @@ jobs:
               continue
             fi
 
+            flow_name=""
+            if [ -f $project/pdk.json ]; then
+              flow_name=$(jq -r '.FLOW_NAME' $project/pdk.json)
+            else
+              flow_name=$(jq -r '.flow_version' $project/commit_id.json)
+              if [ "$flow_name" = "null" ]; then
+                flow_name=$(jq -r '.openlane_version' $project/commit_id.json)
+              fi
+            fi
+
             # Skip projects that were not built with OpenLane2 or LibreLane (e.g. analog and mixed-signal projects)
-            if [[ "$(jq -r '.openlane_version' $project/commit_id.json)" != "OpenLane2 2"* ]] && \
-               [[ "$(jq -r '.flow_version' $project/commit_id.json)" != "OpenLane2 2"* ]] && \
-               [[ "$(jq -r '.flow_version' $project/commit_id.json)" != "LibreLane "* ]]; then
+            if [[ "$flow_name" != "OpenLane2 "* ]] && \
+               [[ "$flow_name" != "LibreLane"* ]]; then
               continue
             fi
             
