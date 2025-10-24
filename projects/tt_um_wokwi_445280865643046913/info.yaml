@@ -1,0 +1,49 @@
+# Tiny Tapeout project information (Wokwi project)
+project:
+  wokwi_id:     445280865643046913       # Set this to the ID of your Wokwi project (the number from the project's URL)
+  title:        "Tony H's 1st draft"      # Project title
+  author:       "Tony Habib"      # Your name
+  discord:      "baldgeek"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Simple customizable flasher"      # One line description of what your project does
+  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     1       # Clock frequency in Hz (or 0 if not applicable)
+
+  # How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  # Inputs
+  ui[0]: "dip switch 1"
+  ui[1]: "dip switch 2"
+  ui[2]: "dip switch 3"
+  ui[3]: "dip switch 4"
+  ui[4]: "dip switch 5"
+  ui[5]: "dip switch 6"
+  ui[6]: "dip switch 7"
+  ui[7]: "dip switch 8"
+
+  # Outputs
+  uo[0]: "AND of IN0 and clock signal"
+  uo[1]: "AND of IN1 and clock signal"
+  uo[2]: "AND of IN2 and clock signal"
+  uo[3]: "AND of IN3 and clock signal"
+  uo[4]: "AND of IN4 and clock signal"
+  uo[5]: "AND of IN5 and clock signal"
+  uo[6]: "AND of IN6 and clock signal"
+  uo[7]: "AND of IN7 and clock signal"
+
+  # Bidirectional pins
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+# Do not change!
+yaml_version: 6
