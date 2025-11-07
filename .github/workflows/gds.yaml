@@ -114,6 +114,10 @@ jobs:
       - name: Copy macros
         run: python ./tt/configure.py --copy-macros
 
+      # Disable magic DRC for tt_top, as it fails with SONOS flash party
+      - name: Disable magic DRC for tt_top
+        run: sed -i 's/Checker.MagicDRC,\s*$/#Checker.MagicDRC,/g' tt-multiplexer/ol2/tt_top/build.py
+
       - name: Harden tt_top
         working-directory: tt-multiplexer/ol2/tt_top
         run: nix-shell $GITHUB_WORKSPACE/librelane/shell.nix --run "python build.py --skip-xor-checks"
