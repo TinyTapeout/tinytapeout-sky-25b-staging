@@ -20,62 +20,51 @@ module tt_um_eestevez3_SAR_ADC (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    
+	wire [7:0] dac;
+	wire sh_out;
+	wire comp_out;
+	wire dac_out;
 
 	Sample_and_Hold Sample_and_Hold(
-		.VCC(VDPWR)
-		.VSS(VGND)
-		.SH_IN(ua[0])
-		.SH_OUT(sh_out)
+		.VCC(VDPWR),
+		.VSS(VGND),
+		.SH_IN(ua[0]),
+		.SH_OUT(sh_out),
 		.SH_CLK(clk)
 	);
 	
 	comparator comparator(
-		.VCC(VDPWR)
-		.VSS(VGND)
-		.CAL(ui_in[1])
-		.EN_N(ui_in[0])
-		.PLUS(sh_out)
-		.MINUS(dac_out)
+		.VCC(VDPWR),
+		.VSS(VGND),
+		.CAL(ui_in[1]),
+		.EN_N(ui_in[0]),
+		.PLUS(sh_out),
+		.MINUS(dac_out),
 		.COMP_OUT(comp_out)
 	);
 	
 	r2r_dac r2r_dac(
-		.VSS(VGND)
-		.VSUBS(VGND)
-		.b0(dac[7])
-		.b1(dac[6])
-		.b2(dac[5])
-		.b3(dac[4])
-		.b4(dac[3])
-		.b5(dac[2])
-		.b6(dac[1])
-		.b7(dac[0])
+		.VSS(VGND),
+		.VSUBS(VGND),
+		.b0(dac[7]),
+		.b1(dac[6]),
+		.b2(dac[5]),
+		.b3(dac[4]),
+		.b4(dac[3]),
+		.b5(dac[2]),
+		.b6(dac[1]),
+		.b7(dac[0]),
 		.dac_out(dac_out)
 	);
 	
 	sar_control sar_control(
-		.clk(uio_out[0])
-		.rst(rst_n)
-		.cmp(comp_out)
-		.rv_stb(uio_out[1])
-		.regv[0](uo_out[0])
-		.regv[1](uo_out[1])
-		.regv[2](uo_out[2])
-		.regv[3](uo_out[3])
-		.regv[4](uo_out[4])
-		.regv[5](uo_out[5])
-		.regv[6](uo_out[6])
-		.regv[7](uo_out[7])
-		.dac[0](dac[0])
-		.dac[1](dac[1])
-		.dac[2](dac[2])
-		.dac[3](dac[3])
-		.dac[4](dac[4])
-		.dac[5](dac[5])
-		.dac[6](dac[6])
-		.dac[7](dac[7])
-		.VPWR(VDPWR)
+		.clk(uio_out[0]),
+		.rst(rst_n),
+		.cmp(comp_out),
+		.rv_stb(uio_out[1]),
+		.regv(uo_out),
+		.dac(dac),
+		.VPWR(VDPWR),
 		.VGND(VGND)
 	);
 	
