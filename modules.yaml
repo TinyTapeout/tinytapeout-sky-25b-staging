@@ -6,3 +6,29 @@ modules:
   - name: "factory_test"
     x: 7
     y: 14
+# Art containing modules that needs to be carefully placed so they don't get flipped/mirrored:
+  - name: oscillating_bones
+    x: 4
+    y: 10
+    height: 2
+    width: 1
+    pg_vaa: true
+    analog:
+      0: null
+  - name: sonos_flash_party
+    x: 6
+    y: 10
+    pg_vaa: true
+    height: 2
+    width: 1
+    analog:
+      0: null
+  - name: tinyflash
+    x: 1
+    y: 10
+    pg_vaa: false
+    height: 2
+    width: 2
+    analog:
+      0: null
+      1: null
