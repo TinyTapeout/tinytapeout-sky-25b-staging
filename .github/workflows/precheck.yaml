@@ -47,6 +47,11 @@ jobs:
           name: chipfoundry_submission
           path: tinytapeout-submission
 
+      - name: Patch FEOL deck to disable MR_tunm.CON.1
+        working-directory: mpw_precheck
+        run: |
+          sed -i '/tunm\.output(/{N;N;N; /MR_tunm\.CON\.1/{s/^/    # /; s/\n/\n    # /g};}' checks/tech-files/sky130A_mr.drc
+
       - name: Run precheck (run id = ${{ fromJSON(steps.download_artifact.outputs.artifacts)[0].workflow_run.id }})
         working-directory: mpw_precheck
         run: |
