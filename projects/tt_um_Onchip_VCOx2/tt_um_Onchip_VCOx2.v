@@ -26,7 +26,7 @@ module tt_um_Onchip_VCOx2 (
         .vrst(ua[2]),
         .vctrn(ua[1]),
         .out(ua[0])
-    )
+    );
 
     rvco_11st_oscillator rvco_11st_oscillator2(
         .vdd(VDPWR),
@@ -34,7 +34,7 @@ module tt_um_Onchip_VCOx2 (
         .vrst(ua[5]),
         .vctrn(ua[4]),
         .out(ua[3])
-    )
+    );
 
     // outputs 
     assign uo_out[0] = VGND;
