@@ -30,11 +30,12 @@ Then install all the Python dependencies. You may want to use a virtual envirome
 pip install -r tt-multiplexer/py/requirements.txt -r tt/requirements.txt
 ```
 
-## Fetching the projects
+## Configuring the shuttle
 
 Run the following commands to generate the configuration for building Tiny Tapeout:
 
 ```bash
+./patch_mux_config.sh
 python tt/configure.py --update-shuttle
 ```
 

@@ -52,6 +52,10 @@ jobs:
           path: librelane
           ref: ${{ env.LIBRELANE_TAG }}
 
+      # Temporary patch to make space for 4-tile high projects:
+      - name: Patch mux configuration to make room for x4-tile high projects
+        run: ./patch_mux_config.sh
+
       - name: Update caravel configuration
         run: python ./tt/configure.py --update-shuttle
 
