@@ -15,14 +15,14 @@ modules:
     pg_vaa: true
     analog:
       0: null
-  - name: sonos_flash_party
-    x: 6
-    y: 10
-    pg_vaa: true
-    height: 2
-    width: 1
-    analog:
-      0: null
+#  - name: sonos_flash_party
+#    x: 6
+#    y: 10
+#    pg_vaa: true
+#    height: 2
+#    width: 1
+#    analog:
+#      0: null
   - name: tinyflash
     x: 1
     y: 10
